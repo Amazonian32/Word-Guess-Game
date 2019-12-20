@@ -12,25 +12,33 @@ var guessesRemaining;
 var incorrectGuesses;
 var correctGuesses;
 
+var tempWord
 
-function testGame() {
+window.onload = function testGame() {
     tempWord = "arcade";
     correctGuesses = [];
+    guessesRemaining = 10;
+    this.incorrectGuesses = [];
     console.log(tempWord);
-
-
-
-
-
-
 
     for (let i = 0; i < tempWord.length; i++) {
         correctGuesses.push("_");
 
     }
-    console.log(correctGuesses.push());
 
-}
+    document.getElementById("correct").innerHTML = correctGuesses.join(" ");
+    console.log(correctGuesses.push());
+    document.getElementById("guesses").innerHTML = guessesRemaining;
+    console.log(this.guessesRemaining);
+
+
+
+
+
+    
+};
+
+
 
 
 
@@ -41,7 +49,4 @@ function testGame() {
 document.onkeyup = function (event) {
     var playerGuess = String.fromCharCode(event.keyCode).toLowerCase();
     console.log(playerGuess);
-
 };
-testGame();
-
