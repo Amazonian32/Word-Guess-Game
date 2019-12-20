@@ -15,7 +15,7 @@ var correctGuesses;
 var tempWord
 
 window.onload = function testGame() {
-    tempWord = "arcade";
+    tempWord = answer.toLowerCase();
     correctGuesses = [];
     guessesRemaining = 10;
     incorrectGuesses = [];
@@ -23,7 +23,6 @@ window.onload = function testGame() {
 
     for (let i = 0; i < tempWord.length; i++) {
         correctGuesses.push("_");
-
     }
 
     document.getElementById("correct").innerHTML = correctGuesses.join(" ");
@@ -50,19 +49,13 @@ function userGuess(letter) {
         }
         document.getElementById("correct").innerHTML = correctGuesses.join(" ");
     }
+    if (guessesRemaining === 0) {
+        document.getElementById("incorrect").innerHTML = "GAME OVER";
+        guessesRemaining = 0;
+    }
+
 
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
