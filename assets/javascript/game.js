@@ -18,7 +18,7 @@ window.onload = function testGame() {
     tempWord = "arcade";
     correctGuesses = [];
     guessesRemaining = 10;
-    this.incorrectGuesses = [];
+    incorrectGuesses = [];
     console.log(tempWord);
 
     for (let i = 0; i < tempWord.length; i++) {
@@ -30,13 +30,35 @@ window.onload = function testGame() {
     console.log(correctGuesses.push());
     document.getElementById("guesses").innerHTML = guessesRemaining;
     console.log(this.guessesRemaining);
+}
+
+function userGuess(letter) {
+    guessesRemaining--;
+    document.getElementById("guesses").innerHTML = guessesRemaining;
+
+    if (tempWord.indexOf(letter) === -1) {
+        incorrectGuesses.push(letter);
+        document.getElementById("incorrect").innerHTML = incorrectGuesses.join(", ");
+        console.log(incorrectGuesses.join(", "));
+    } else {
+        for (let i = 0; i < tempWord.length; i++) {
+            if (letter === tempWord[i]) {
+                correctGuesses[i] = letter;
+                console.log(correctGuesses[i])
+            }
+
+        }
+        document.getElementById("correct").innerHTML = correctGuesses.join(" ");
+    }
+
+}
 
 
 
 
 
-    
-};
+
+
 
 
 
@@ -49,4 +71,5 @@ window.onload = function testGame() {
 document.onkeyup = function (event) {
     var playerGuess = String.fromCharCode(event.keyCode).toLowerCase();
     console.log(playerGuess);
+    userGuess(playerGuess);
 };
