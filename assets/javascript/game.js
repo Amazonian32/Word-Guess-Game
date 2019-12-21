@@ -44,14 +44,21 @@ function userGuess(letter) {
             if (letter === tempWord[i]) {
                 correctGuesses[i] = letter;
                 console.log(correctGuesses[i])
+
             }
 
         }
         document.getElementById("correct").innerHTML = correctGuesses.join(" ");
     }
+    
     if (guessesRemaining === 0) {
         document.getElementById("incorrect").innerHTML = "GAME OVER";
         guessesRemaining = 0;
+    }else {
+
+        if (correctGuesses.indexOf("_") == -1) {
+            console.log("WINNER");
+        }
     }
 
 
@@ -61,8 +68,10 @@ function userGuess(letter) {
 
 
 
+
 document.onkeyup = function (event) {
     var playerGuess = String.fromCharCode(event.keyCode).toLowerCase();
     console.log(playerGuess);
     userGuess(playerGuess);
+
 };
