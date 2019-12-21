@@ -50,19 +50,25 @@ function userGuess(letter) {
         }
         document.getElementById("correct").innerHTML = correctGuesses.join(" ");
     }
-    
-    if (guessesRemaining === 0) {
-        document.getElementById("incorrect").innerHTML = "GAME OVER";
-        guessesRemaining = 0;
-    }else {
 
-        if (correctGuesses.indexOf("_") == -1) {
-            console.log("WINNER");
+    function wordMatch() {
+
+
+        if (guessesRemaining === 0) {
+            document.getElementById("incorrect").innerHTML = "GAME OVER";
+            guessesRemaining = 0;
+        } else {
+
+            if (correctGuesses.indexOf("_") == -1) {
+                console.log("WINNER");
+                wins++;
+                console.log(wins);
+            }
         }
+
     }
-
-
-}
+    wordMatch();
+};
 
 
 
@@ -75,3 +81,4 @@ document.onkeyup = function (event) {
     userGuess(playerGuess);
 
 };
+
