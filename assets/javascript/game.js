@@ -31,6 +31,8 @@ window.onload = function testGame() {
     console.log(this.guessesRemaining);
 }
 
+
+
 function userGuess(letter) {
     guessesRemaining--;
     document.getElementById("guesses").innerHTML = guessesRemaining;
@@ -55,19 +57,35 @@ function userGuess(letter) {
 
 
         if (guessesRemaining === 0) {
+            console.log("LOSER");
+            var misMatch;
             document.getElementById("incorrect").innerHTML = "GAME OVER";
             guessesRemaining = 0;
         } else {
 
             if (correctGuesses.indexOf("_") == -1) {
                 console.log("WINNER");
+                var match = tempWord;
                 wins++;
                 console.log(wins);
             }
         }
+        function switchWord() {
+            if (match) {
+            console.log(tempWord);
+            words++;
+            console.log();
+            
+        }
 
+        }
+        switchWord();
     }
-    wordMatch();
+
+  wordMatch();
+  
+
+  
 };
 
 
