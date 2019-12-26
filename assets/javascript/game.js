@@ -68,28 +68,28 @@ function userGuess(letter) {
                 var match = tempWord;
                 wins++;
                 console.log(wins);
+                
             }
         }
-        function switchWord() {
-            if (match) {
-            console.log(tempWord);
-            words++;
-            console.log();
-            
-        }
-
-        }
-        switchWord();
+        
+        
     }
 
   wordMatch();
   
 
   
+
+function switchWord() {
+    if (match) {
+    console.log(tempWord);
+    
+    return testGame();
+}
+
+}
+
 };
-
-
-
 
 
 
@@ -97,6 +97,6 @@ document.onkeyup = function (event) {
     var playerGuess = String.fromCharCode(event.keyCode).toLowerCase();
     console.log(playerGuess);
     userGuess(playerGuess);
-
+    switchWord();
 };
 
