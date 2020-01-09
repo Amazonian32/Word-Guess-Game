@@ -14,34 +14,44 @@
 </head>
 
 <body>
-    <!-- Title of the Game -->
-    <h1>Hangman: Retro-cade</h1>
-    <!-- Image for the title background-->
-    <img src="assets/images/Title picture.png" alt="">
-    <!-- Images that are tied to word guesses*** -->
-    <!-- Instructions for the game -->
-    <h3>How to Play:</h3>
-    <ul>
-        <li>Use the keys on the keyboard to guess</li>
-        <li>Incorrect guesses will cost a guess and show up below</li>
-        <li>Correct guesses will appear on the spaces for the word</li>
-        <li>Guess the word to get a fun surprise!</li>
-    </ul>
-    <!-- WINS counter  -->
-    <h5 id="wins">WINS:</h5>
-    <h5 id="losses">LOSSES:</h5>
-    <!-- Current word(stationary)*** -->
-    <h2>Current Word</h2>
-    <!-- IMPORTANT: The SPACES where the LETTERS guessed that are CORRECT will go -->
-    <div id="correct"></div>
-    <!-- Number of Guesses Remaining(stationary) -->
-    <h4>Number of Guesses Remaining</h4>
-    <!-- Actual number value of guesses; needs to be the same everytime, countdown when a WRONG guess is made, and reset!!! -->
-    <div id="guesses"></div>
-    <!-- Letters Already Guessed(stationary)-->
-    <h4>Letters Already Guessed</h4>
-    <!-- IMPORTANT: The EMPTY SECTION where WRONG letter guesses will go -->
-    <div id="incorrect"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h1>Hangman: Retro-cade</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <img src="assets/images/Title picture.png" alt="">
+            </div>
+        </div>
+        <div class="row justify-content-between">
+            <div class="col-sm-5">
+                <h3>How to Play:</h3>
+                <ul>
+                    <li>Use the keys on the keyboard to guess</li>
+                    <li>Incorrect guesses will cost a guess and show up below</li>
+                    <li>Correct guesses will appear on the spaces for the word</li>
+                    <li>Guess the word to get a fun surprise!</li>
+                    <li>Collect all stickers!</li>
+                </ul>
+            </div>
+            <div class="col-sm-5">
+                <h5 id="wins">WINS:</h5>
+                <h5 id="losses">LOSSES:</h5>
+                <h2>Current Word</h2>
+                <div id="correct"></div>
+                <h4>Number of Guesses Remaining</h4>
+                <div id="guesses"></div>
+                <h4>Letters Already Guessed</h4>
+                <div id="incorrect"></div>
+                <div class="row">
+                    <div class="col-sm" id="statusimage">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

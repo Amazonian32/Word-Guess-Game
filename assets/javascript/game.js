@@ -1,7 +1,7 @@
 function reStart() {
     document.getElementById("incorrect").innerHTML = "";
     incorrectGuesses = [];
-    guessesRemaining = 10;
+    guessesRemaining = 10; 
 }
 var words = ["Mario", "PacMan", "Zelda", "FinalFantasy", "Pokemon", "Sonic", "Galaga", "Tetris"]
 var wins = 0;
@@ -9,7 +9,7 @@ var losses = 0;
 
 
 window.onload = function testGame() {
-   
+
 
 
 
@@ -46,13 +46,14 @@ window.onload = function testGame() {
 
 
         function userGuess(letter) {
-            guessesRemaining--;
+
             document.getElementById("guesses").innerHTML = guessesRemaining;
 
             if (tempWord.indexOf(letter) === -1) {
                 incorrectGuesses.push(letter);
                 document.getElementById("incorrect").innerHTML = incorrectGuesses.join(", ");
                 console.log(incorrectGuesses.join(", "));
+                guessesRemaining--;
             } else {
                 for (let i = 0; i < tempWord.length; i++) {
                     if (letter === tempWord[i]) {
@@ -86,6 +87,63 @@ window.onload = function testGame() {
                     console.log(wins);
                     testGame();
                     reStart();
+                    if (match == "zelda") {
+                        var image = document.createElement("IMG")
+                        image.setAttribute("src", "https://mpng.pngfly.com/20190128/tge/kisspng-the-legend-of-zelda-breath-of-the-wild-the-legend-pixilart-toon-link-by-agenttoast-7-5c4f5f94e8c435.7885067015487056849534.jpg")
+                        image.setAttribute("width", "50px");
+                        image.setAttribute("height", "50");
+                        document.getElementById("statusimage").appendChild(image);
+
+                    } else if (match == "finalfantasy") {
+                        var image = document.createElement("IMG")
+                        image.setAttribute("src", "https://www.clipartkey.com/mpngs/m/257-2579793_cloud-final-fantasy-pixel-art-clipart-png-download.png")
+                        image.setAttribute("width", "50px");
+                        image.setAttribute("height", "50");
+                        document.getElementById("statusimage").appendChild(image);
+
+                    } else if (match == "pokemon") {
+                        var image = document.createElement("IMG")
+                        image.setAttribute("src", "https://art.pixilart.com/498f8fe5599ddd9.png")
+                        image.setAttribute("width", "50px");
+                        image.setAttribute("height", "50");
+                        document.getElementById("statusimage").appendChild(image);
+
+                    } else if (match == "galaga") {
+                        var image = document.createElement("IMG")
+                        image.setAttribute("src", "http://pixelartmaker.com/art/06c6bdf0dded27e.png")
+                        image.setAttribute("width", "50px");
+                        image.setAttribute("height", "50");
+                        document.getElementById("statusimage").appendChild(image);
+
+                    } else if (match == "mario") {
+                        var image = document.createElement("IMG")
+                        image.setAttribute("src", "https://cdn.imgbin.com/21/21/11/imgbin-luigi-super-mario-bros-pixel-art-luigi-Ak0yhtdw0V0w94Re7fFmDTib7.jpg")
+                        image.setAttribute("width", "50px");
+                        image.setAttribute("height", "50");
+                        document.getElementById("statusimage").appendChild(image);
+
+                    } else if (match == "pacman") {
+                        var image = document.createElement("IMG")
+                        image.setAttribute("src", "http://pixelartmaker.com/art/c8b2531363a3e36.png")
+                        image.setAttribute("width", "50px");
+                        image.setAttribute("height", "50");
+                        document.getElementById("statusimage").appendChild(image);
+
+                    } else if (match == "sonic") {
+                        var image = document.createElement("IMG")
+                        image.setAttribute("src", "https://img.favpng.com/24/22/21/sonic-the-hedgehog-2-minecraft-pixel-art-png-favpng-PVD04E80MSatdQQdyGNLT0qFR.jpg")
+                        image.setAttribute("width", "50px");
+                        image.setAttribute("height", "50");
+                        document.getElementById("statusimage").appendChild(image);
+
+                    } else if (match == "tetris") {
+                        var image = document.createElement("IMG")
+                        image.setAttribute("src", "https://media.giphy.com/media/MOSebUr4rvZS0/giphy.gif")
+                        image.setAttribute("width", "50px");
+                        image.setAttribute("height", "50");
+                        document.getElementById("statusimage").appendChild(image);
+
+                    }
                 }
             }
 
